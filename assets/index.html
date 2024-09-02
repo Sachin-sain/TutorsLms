@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hCaptcha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+</head>
+<body style='background-color: transparent;'>
+<div style='height: 60px;'></div>
+<form action="?" method="POST">
+    <div class="h-captcha"
+         data-sitekey="745f6efe-b4d7-407b-9448-ba205e057206"
+         data-callback="captchaCallback"></div>
+
+</form>
+<script>
+      function captchaCallback(response) {
+        if (typeof Captcha!=="undefined") {
+          Captcha.postMessage(response);
+        }
+      }
+    </script>
+</body>
+</html>
